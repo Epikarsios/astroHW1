@@ -1,0 +1,125 @@
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage{physics}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{braket}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\usepackage{float}
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{California State University San Marcos \\ Dr. Dominguez, Physics 490} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Astrophysics H.W. I \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Josh Lucas} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{Weighing the Earth and the Sun}
+\begin{equation}
+\vec{F}= \frac{GMm}{r^2}\hat{r}
+\end{equation}
+\textbf{a) What are the units of the universal gravitational constant G?}\\
+
+\textbf{(b) Using the rafius of the earth,($R_E$), and empirical observations that the acceleration of an object near the Earth is g ($9.8ms^-2$)  and G is Newton's  Universal gravitational constant, find an expression for the mass of the Earth and use it to estimate the Earth's mass.}
+
+\section{Weighing the Sun}
+
+\textbf{(a) An astronomical unit (AU) is defined as the average distance between the Earth and the
+center of the Sun. Assuming that it take about 8.5 minutes for light from the Sun to reach the
+Earth, derive an expression using the speed of light that represents 1 AU.}\\
+
+Velocity has units of meters per second which if multiplied by time and we get a distance. 
+\begin{equation*}
+c \times t = d \rightarrow 2.99\times 10^8 \tfrac{m}{s} \bigg(\frac{60sec}{1 min}(8.5min)\bigg) = 2.99\times 10^8 \tfrac{m}{s} (510sec) =  
+\end{equation*}
+We can use a slightly closer approximation by using 500 seconds multiplied by the speed of light for 1 AU
+
+\textbf{(b)Using the fact that it takes 1 year for the Earth to complete one revolution around
+the Sun, please derive an expression for the mass of the Sun and calculate this mass.}\\
+\textbf{(c) Using your expression for Problem 1 part (b) and your answer from part (b) of this
+problem, derive an expression for the ratio of Earth's mass to that of the Sun.}
+
+\section{Escape Velocities}
+\textbf{The escape velocity is defined as the velocity initially needed by an object to permanently
+leave the gravitational pull of a planet, star, etc.
+(a) Derive a general expression for the escape velocity for an object of mass m leaving
+the gravitational in
+influence of a more massive object with mass M.}\\
+\textbf{
+(b) Using your expressions from the previous problems, derive an escape velocity for (1)
+Earth and (2) The Sun. You can assume that for Earth, the initial position is RE and for
+the Sun the initial position is at 1 AU.}\\
+\textbf{(c) Provide numerical answers to part (b) in units of (1) meter and seconds (2) miles and
+hours.}\\
+\textbf{(d)Imagine an object with Earth's mass (mE) what is so compact that the escape velocity
+is equal to the speed of light c. Derive an expression, using your answer from part (a), for
+the radius of this object. What is this value numerically?}
+
+
+\section{Keppler Orbits 1/2}
+\textbf{(a) Derive an expression for the orbital velocity of Earth assuming it has a circular orbit of
+radius $r_{E-S}$.}\\
+\textbf{(b) Using your expression from part (a), derive an expression for the total energy of Earth
+(= KE + PE) and comment on whether it is less than or greater than zero.}
+%----------------------------------------------------------------------------------------
+\section{Keppler Orbits 2/2}
+
+\textbf{(a) Run the Matlab code and make sure that it works. If it doesn't, you might have to
+modify the code to dene the mass of the Sun. You should not need to dene the mass of
+the object (Why?). What is the shape of the orbit?}\\
+\textbf{(b) increase the initial velocity of the satellite by 10%. What happens to the shape of
+the orbit?}\\
+\textbf{(c) increase the initial velocity of the object by 20%. What happens to the shape of the
+orbit?}\\
+\textbf{(d) Decrease the  velocity by 20$\%$. What happens to the shape of the orbit?}\\
+\textbf{(e) Set the magnitude of the satellite's initial velocity equal to the escape velocity. Comment and sketch the shape of the orbit.}
+
+
+\section{Free Falling}
+\textbf{(a)Consider a mass m initially at a distance R from a much more massive mass M. Derive
+an expression for the time it would take for this mass to crash into the much more massive mass. You can assume that the radius of both masses if much smaller than R. Check the
+units of your answer.}\\
+\textbf{(b) Calculate what this free-fall timescale is if R is 1 AU.}\\
+\textbf{(c) Extra-credit: Check your answer in part (b) by using the numerical orbit simulator
+(or write your own code) used in our previous problem.}
+\end{document}

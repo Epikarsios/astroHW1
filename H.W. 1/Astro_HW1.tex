@@ -59,26 +59,54 @@
 \vec{F}= \frac{GMm}{r^2}\hat{r}
 \end{equation}
 \textbf{a) What are the units of the universal gravitational constant G?}\\
-
-\textbf{(b) Using the rafius of the earth,($R_E$), and empirical observations that the acceleration of an object near the Earth is g ($9.8ms^-2$)  and G is Newton's  Universal gravitational constant, find an expression for the mass of the Earth and use it to estimate the Earth's mass.}
-
+\\
+We can find the units of the Universal Gravitaional constant by solving for G and analyzing the coresponding units.
+\begin{equation*}
+m\vec{a} = \frac{GMm}{r^2}\hat{r} \rightarrow G = \frac{m\vec{a} r^2}{Mm} = \frac{\vec{a}r^2}{M} = \frac{meters^3}{kilograms\ * seconds^2}
+\end{equation*}
+\textbf{(b) Using the radius of the earth,($R_E$), and empirical observations that the acceleration of an object near the Earth is g ($9.8ms^-2$)  and G is Newton's  Universal gravitational constant, find an expression for the mass of the Earth and use it to estimate the Earth's mass.}\\
+\\
+We know that the acceleration of an object near the Earth is $\vec{a} = 9.8\tfrac{m}{s^2}$, the force of the Earth's gravity on an object is equal to the mass of the ogbject multiplied by the acceleration,  $ \vec{F_g} = m\vec{a}$. Using the radius of the earth and Newton's Universal gravitation constant we can solve for the mass of the earth.
+\begin{equation*}
+m\vec{a} = G\frac{M_E m}{R_E^2}\hat{r} \rightarrow M_E = \frac{\vec{a}R_E^2}{G} = \frac{(9.8\tfrac{m}{s^2})\ 6.378\times 10^6m}{6.674\times 10^-11 \tfrac{m^3}{kg*s^2}} = 5.97\times 10^{24}
+\end{equation*}
 \section{Weighing the Sun}
 
 \textbf{(a) An astronomical unit (AU) is defined as the average distance between the Earth and the
 center of the Sun. Assuming that it take about 8.5 minutes for light from the Sun to reach the
 Earth, derive an expression using the speed of light that represents 1 AU.}\\
-
-Velocity has units of meters per second which if multiplied by time and we get a distance. 
+\\
+Distance is equal to velocity multiplied by time
 \begin{equation*}
-c \times t = d \rightarrow 2.99\times 10^8 \tfrac{m}{s} \bigg(\frac{60sec}{1 min}(8.5min)\bigg) = 2.99\times 10^8 \tfrac{m}{s} (510sec) =  
+C * t = d \rightarrow 2.99\times 10^8 \tfrac{m}{s} * 8.5min \big(\frac{60sec}{1min}\big) = 1.5\times 10^8 km\approx1 AU
 \end{equation*}
-We can use a slightly closer approximation by using 500 seconds multiplied by the speed of light for 1 AU
+Velocity has units of meters per second which if multiplied by time and we get a distance. 
+
+We can use a slightly closer approximation by using 500 seconds multiplied by the speed of light for 1 AU\\
 
 \textbf{(b)Using the fact that it takes 1 year for the Earth to complete one revolution around
 the Sun, please derive an expression for the mass of the Sun and calculate this mass.}\\
-\textbf{(c) Using your expression for Problem 1 part (b) and your answer from part (b) of this
-problem, derive an expression for the ratio of Earth's mass to that of the Sun.}
 
+The average distance of the radius of the Earth orbit is one astronomical unit which it completes in one years time. From this relation we can find the velocity of the earth and the force holding the earth in orbit.
+The Earth's velocity is equal to the circumference of the orbit over the time,
+\begin{equation*}
+circumfrence = \int rd\theta = 2\pi r = 2\pi (1AU)
+\end{equation*}
+\begin{equation*}
+\frac{distance}{time}= velocity =\frac{2\pi (1AU)}{\pi \times 10^7 sec} = 30000\tfrac{m}{s}
+\end{equation*}
+We can now solve for the center force on the earth tethering it to the sun,
+\begin{equation*}
+\vec{F_c} = m\frac{v^2}{r} =  5.97\times 10^24 kg \frac{(30000\tfrac{m}{s})^2}{6.378\times 10^6} = 8.434\times 10^{26} joules
+\end{equation*}
+We can now relate the center force to the Newtons equation for gravity,
+\begin{equation*}
+\frac{mv^2}{r} = G\frac{Mm}{r^2}\hat{r} \rightarrow M = \frac{v^2r}{G} = \frac{(30000\tfrac{m}{s})^26.378\times 10^6}{1.5\times 10^{11}\tfrac{m^3}{kg*s^2} } \approx 2\times 10^{30}kg
+\end{equation*}
+
+\textbf{(c) Using your expression for Problem 1 part (b) and your answer from part (b) of this
+problem, derive an expression for the ratio of Earth's mass to that of the Sun.}\\
+\\
 \section{Escape Velocities}
 \textbf{The escape velocity is defined as the velocity initially needed by an object to permanently
 leave the gravitational pull of a planet, star, etc.
@@ -99,8 +127,26 @@ the radius of this object. What is this value numerically?}
 \section{Keppler Orbits 1/2}
 \textbf{(a) Derive an expression for the orbital velocity of Earth assuming it has a circular orbit of
 radius $r_{E-S}$.}\\
+\begin{equation}
+\vec{V_{orbit}} = \frac{\text{circumfrence of orbit}}{time of one revolution} = \frac{2\pi 1.5\times 10^{8}km}{\pi \times 10^7 sec} \approx
+\end{equation}
+We can also use the relation of the center force and gravitational force and solve for velocity
+\begin{equation*}
+\frac{mv^2}{r} = G\frac{Mm}{r^2 } \rightarrow v^2 = \frac{GM}{r}
+\end{equation*}
 \textbf{(b) Using your expression from part (a), derive an expression for the total energy of Earth
 (= KE + PE) and comment on whether it is less than or greater than zero.}
+
+\begin{equation*}
+T = \frac{1}{2}mv^2
+\end{equation*}
+replacing v for terms of gravitational force,
+\begin{equation*}
+T= \frac{1}{2}m(\frac{GM}{r})
+\end{equation*}
+\begin{equation*}
+U = -\int \vec{F}\cdot d\vec{r} \rightarrow U = - \int -GMm \frac{1}{r^2} d\vec{r} = -GMm\frac{1}{2r}
+\end{equation*}
 %----------------------------------------------------------------------------------------
 \section{Keppler Orbits 2/2}
 

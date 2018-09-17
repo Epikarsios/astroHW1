@@ -1,0 +1,189 @@
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage{physics}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{braket}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\usepackage{float}
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{California State University San Marcos \\ Dr. Dominguez, Physics 490} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Astrophysics H.W. 2 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Josh Lucas} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{Earth's Orbit and Virial Theorem}
+
+\textbf{(a) Consider the orbit of planet Earth, which is established by the interaction between the Sun and Earth masses. Please evaluate what is the ratio of kinetic energy (KE) to gravitational potential energy (PE). You may assume that the Earth has a circular orbit for simplicity.}\\
+\\
+We know that kinetic energy of an object is equal to one half the mass multiplied by the velocity squared, $T =\frac{1}{2}mv^2$. We need to relate the velocity to the force from gravity. We can use the equations for simple harmonic motion to make the relations. If we take two derivatives of the location of the Earth, as it orbits the origin, with respect to time we can find the acceleration,
+\begin{align*}
+\vec{r} & = r \cos(\omega t) \hat{i} + r \sin(\omega t) \hat{j} \\
+\frac{d \vec{r}}{dt} & = \frac{d}{dt} \big[ r\cos(\omega t) \hat{i} + r\sin(\omega t) \hat{j} \big]\\
+\dot{r} & = -\omega r\cos(\omega t)\hat{i} + \omega r \sin(\omega t)\hat{j} \\
+\frac{d \dot{r}}{dt} & = \frac{d}{dt} \big[ - \omega r\cos(\omega t) \hat{i} + \omega r\sin(\omega t) \hat{j} \big]\\
+\vec{a} = \ddot{r} & = - \omega^2 \vec{r}\quad \text{Subsituting in to Newtons' second law,}\\ 
+m(-\omega^2 \vec{r}) & = G\frac{Mm}{r^2} \hat{r} \quad \text{We need to relate omega to velocity}
+\end{align*}
+The velocity is the arc length S, distance around the sun, over the period of orbit T
+\begin{equation*}
+S  = \int_0^{2\pi} r d\theta = 2\pi r,\quad  v = \frac{S}{T} \rightarrow \frac{2\pi r}{T}, \quad \omega  = \frac{2\pi}{T}, \quad v = \omega r \rightarrow \omega = \frac{v}{r}\quad 
+\end{equation*}
+substituting in for omega and solving for velocity
+\begin{align*}
+m \bigg(\frac{v}{r} \bigg)^2 & = G \frac{Mm}{r^2} \\
+v^2 & = \frac{GM}{r} \text{We can now subsitute into kinetic energy}\\
+\frac{1}{2}mv^2 & = \frac{1}{2}m\bigg( \frac{GM}{r} \bigg)\\
+T & = \frac{GMm}{2r}
+\end{align*}
+We can derive the gravitational potential energy of the Earth from the force of gravity by integrating over the negative of the work of the force over some distance r,
+\begin{align*}
+U & = -\int_0^r \vec{F}\cdot d\vec{r} \\
+& = -\int_0^r -G\frac{Mm}{r^2}\hat{r} \cdot d\vec{r} \quad \text{The vectors are parallel} \\
+& = GMm\int_0^r r^{-2} dr \\
+U(r) & = - G\frac{Mm}{r}
+\end{align*}
+The total gravitational energy of the earth is then the sum of kinetic energy and potential,
+\begin{align*}
+E  &= T + U\\
+& = \frac{1}{2}mv^2  - \frac{GMm}{r}\\
+& = \frac{1}{2}m (\frac{GM}{r}) - \frac{GMm}{r} \\
+E & = - \frac{GMm}{2r} = \frac{1}{2}U \quad \text{or,} \\
+T & = -\frac{1}{2}U
+\end{align*}
+For gravitational energy we find the ration of kinetic energy to be negative one half of the potential.\\
+\\
+\textbf{(b) Compare your answer in part (a) to the prediction made by Virial Theorem.}\\
+\\
+The Virial theorem states that for a system in equilibrium the time average kinetic energy is equal to negative one half the sum of the time average of the total force dotted with the distance,
+\begin{align*}
+\langle T\rangle & = -\frac{1}{2}\sum_1^{n} \langle \vec{F_k} \cdot \vec{r_k} \rangle \quad \text{We know that potential is related to work,} \\
+U & = - \int \vec{F} \cdot \vec{r} \quad \text{substituting in for the sum,} \\
+\langle T\rangle & = -\frac{1}{2} U \quad \text{which is the result we obtained.}
+\end{align*}
+ 
+\section{Gravitational Self-Energy of Celestial Bodies}
+\textbf{(a) Consider a spherical celestial body with radius R and total mass M. Using unit
+analysis of the gravitational potential energy expression, please write down an expression
+using G, R, and M that may describe the gravitational self-potential energy of this body.}\\
+\\
+We know that our expression needs to give us units of energy,
+\begin{align*}
+\frac{GMm}{r} & = \frac{m^3}{kg\ s^2}\frac{  (kg)(kg)}{(m)} \\
+\frac{GMm}{r} & = \frac{m^2\ kg}{s^2} = joules \\
+& = \frac{GM^2}{r}\quad \text{We can multipy by some unitless scalar C} \\
+E & = C\frac{GM^2}{r}
+\end{align*}
+\textbf{(b) Please derive the gravitational self energy of this body by assuming that the mass
+density as a function of r, the radial distance, is uniform. Compare to your answer from
+part (a)}\\
+\\
+The potential from gravity is,
+\begin{equation*}
+U = - \frac{GMm}{r}
+\end{equation*}
+The radius is the parameter that will control the strength of potential due to the growing size of the mass. We need to describe our mass in terms of radius which can be done if we consider density.
+Uniform density for a sphere is,
+\begin{equation*}
+\rho = \frac{mass}{density} = \frac{M_{\odot}}{\tfrac{4}{3} \pi R_{\odot}^3} \rightarrow\  mass\ = \bigg ( \frac{4}{3} \pi r^3 \bigg)\frac{M_{\odot}}{\tfrac{4}{3} \pi R_{\odot}^3} = M_{\odot}\frac{r^3}{R_{\odot}^3}
+\end{equation*}
+If the mass starts as a infinitesimal speck that is adding mass in a spherical shape with uniform density then it is,
+\begin{align*}
+dm &= \int_0^R \int \int_0^{2\pi} \int_0^\pi  \rho r^2 \sin(\theta) d\theta d\phi dr\\
+dm &= 4\pi \int_0^R \rho r^2 dr 
+\end{align*}
+subsituting dm and M in our formula for gravitation potential we have,
+\begin{align*}
+U & = - \frac{GM_{\odot}dm}{r} \\
+& = - \frac{G}{r} \bigg ( M_{\odot}\tfrac{r^3}{R_{\odot}^3} \bigg) \bigg( \rho 4\pi r^2 dr \bigg)\\
+& = - \frac{4\pi GM_{\odot} \rho}{R_{\odot}^3} \int_0^R r^4 dr \\
+& =  - \frac{4\pi GM_{\odot} }{R_{\odot}^3} \bigg( \frac{3M_{\odot}}{4\pi R_{\odot}^3} \bigg ) \frac{R_{\odot}^5}{5}\\ 
+U & = - \frac{3}{5} \frac{G M_{\odot}^2}{R_{\odot}}
+\end{align*} 
+The expression for gravitational self-potential energy.
+\section{Gravitational Self-Energy of Celestial Bodies}
+\textbf{(a) Assuming that the kinetic energy of the Sun is dominated by random thermal energy,
+please use the Virial theorem to estimate the total thermal energy found within the Sun.
+Please express in terms of G, M, and R.}\\
+\\
+We know that the kinetic energy of a celestial body estimated by the Virial theorem is,
+\begin{align*}
+\langle KE \rangle & = -\frac{1}{2} \langle PE\rangle \quad \text{We can use our potential from earlier} \\ 
+KE & = -\frac{1}{2}PE = -\frac{1}{2} \Big ( - \frac{3}{5} \frac{G M_{\odot}^2}{R_{\odot}} \Big)\\
+KE& = \frac{3GM^2_{\odot}}{10R_{\odot}}
+\end{align*} 
+\textbf{(b) Assuming that the mass of the Sun is dominated by hydrogen atoms (m=mp), use the
+results of part (a) to estimate the average thermal velocity (vT ) for hydrogen atoms found
+in the Sun.}
+\begin{align*}
+KE & = \frac{3}{2} K_BT\ per\ molecule \\
+\frac{3GM^2_{\odot}}{10R_{\odot}} & = \frac{3}{2} K_BT\big ( \tfrac{M_{\odot}}{m_p} \big) \\
+\frac{3GM^2_{\odot}}{10R_{\odot}} \bigg( \frac{2 m_p}{3 K_B M_{\odot}} \bigg) & = T\\
+\frac{GM_{\odot} m_p}{5K_BR_{\odot}} & = T
+\end{align*}
+\begin{align*}
+v_{avg} & = \sqrt{\tfrac{3K_BT}{m}} \\
+&= \sqrt{\tfrac{3K_B}{m_p} \bigg (\tfrac{GM_{\odot}m_p}{5K_bR_{\odot} }\bigg )} \\
+& = \sqrt{\tfrac{3GM_{\odot}}{5R_{\odot}}} \\
+V_{rms} & = \sqrt{\tfrac{3\ (6.67\times 10^{-11}m^3 kg^{-1} s^{-2})\ (2\times 10^{30} kg)}{5\ (7\times 10^8 m)}} \approx 3.38 \times 10^5 \tfrac{m}{s}
+\end{align*}
+We can obtain the same result from the relation,
+\begin{align*}
+KE = \frac{1}{2}mv^2 & = \frac{3GM_{\odot}^2}{10 R_{\odot}}\\
+v^2 & = \frac{3GM_{\odot}^2}{5R_{\odot} M_{\odot}} \quad \text{where m is equal to $M_{\odot}$} \\
+v_{rms} & = \sqrt{\frac{3GM_{\odot}}{5R_{\odot}}}
+\end{align*}
+\textbf{(c) Use the ideal gas law or kinetic theory and your results from part (c) to estimate the
+average temperature inside the Sun.}\\
+\begin{align*}
+KE & = \frac{3}{2} NK_BT \quad \text{Where N is number of particles } \big ( \tfrac{M_{\odot}}{m_p} \big) \\
+\frac{3GM^2_{\odot}}{10R_{\odot}} & = \frac{3}{2} NK_BT \\
+T & = \frac{3GM^2_{\odot}}{10R_{\odot}} \bigg( \frac{2 }{3 NK_B } \bigg) \\
+ & = \frac{GM_{\odot}^2}{5NK_BR_{\odot}}  \\
+& = \frac{ (6.67\times 10^{-11}m^3 kg^{-1} s^{-2})\ (2\times 10^{30} kg)^2\ }{5\ (1.19\times 10^{57})(1.38\times 10^{-23}) (7\times 10^8 m)} \\
+T & \approx 4.61\times 10^6 K \approx \text{5 million degrees kelvin}
+\end{align*}
+
+\end{document}
